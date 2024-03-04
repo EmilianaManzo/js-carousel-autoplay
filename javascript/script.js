@@ -5,6 +5,7 @@ const iconUp = document.querySelector('.btn-up');
 const iconDown = document.querySelector('.btn-down');
 
 
+
 // variabili
 const imgArr = [
   'assets/img/01.webp' ,
@@ -85,6 +86,8 @@ iconUp.addEventListener('click', function(){
 
 let giroCount = 0;
 
+
+
 const girotondo = () => {
   imgcollection[giroCount].classList.add('hide');
   imgMini[giroCount].classList.remove('active');
@@ -102,4 +105,17 @@ const girotondo = () => {
 
 }
 
-const giroloop = setInterval (girotondo, 3000);
+
+let giroloop = setInterval (girotondo, 3000);
+
+// BONUS 
+const slider = document.querySelector('.slider');
+
+slider.addEventListener('mouseenter', function(){
+  clearInterval(giroloop);
+});
+
+slider.addEventListener('mouseleave', function(){
+  giroloop = setInterval (girotondo, 3000);
+})
+
