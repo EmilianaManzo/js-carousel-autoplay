@@ -6,3 +6,4 @@ BONUS
 Per evitare conflitti con lo scroll manuale, quando il mouse si trova sopra lo slider lo scroll automatico si interrompe per poi ripartire all’uscita del mouse
 
 ## Svolgimento:
+1. creare una timing function (setinterval) per creare il loop infinito delle immagini che verranno cambiate ogni 3 sec

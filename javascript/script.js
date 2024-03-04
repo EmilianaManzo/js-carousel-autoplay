@@ -45,9 +45,10 @@ imgMini[counterImg].classList.add('active');
 
 
 
+
 // Inizio bottoni con addEventListener
 
-iconUp.addEventListener('click', function(){
+iconDown.addEventListener('click', function(){
   imgcollection[counterImg].classList.add('hide');
   imgMini[counterImg].classList.remove('active');
   counterImg++;
@@ -62,7 +63,7 @@ iconUp.addEventListener('click', function(){
 });
 
 
-iconDown.addEventListener('click', function(){
+iconUp.addEventListener('click', function(){
   imgcollection[counterImg].classList.add('hide');
   imgMini[counterImg].classList.remove('active');
 
@@ -78,3 +79,27 @@ iconDown.addEventListener('click', function(){
   
 });
 
+
+
+// TIMING FUNCTION 
+
+let giroCount = 0;
+
+const girotondo = () => {
+  imgcollection[giroCount].classList.add('hide');
+  imgMini[giroCount].classList.remove('active');
+
+  giroCount++;
+  
+  
+  if (giroCount > imgArr.length-1){
+    giroCount = 0;
+  }
+
+  
+  imgcollection[giroCount].classList.remove('hide');
+  imgMini[giroCount].classList.add('active');
+
+}
+
+const giroloop = setInterval (girotondo, 3000);
